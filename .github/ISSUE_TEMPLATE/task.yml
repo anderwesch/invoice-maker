@@ -1,0 +1,30 @@
+name: Task
+description: Tarefa tecnica, operacional ou de manutencao
+title: "task: "
+labels:
+  - improvement
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objetivo
+      description: O que esta tarefa precisa resolver?
+      placeholder: Descreva a meta da tarefa.
+    validations:
+      required: true
+  - type: textarea
+    id: work
+    attributes:
+      label: Trabalho previsto
+      description: Quais atividades devem ser executadas?
+      placeholder: Liste os passos tecnicos esperados.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definicao de pronto
+      description: O que precisa existir para fechar esta tarefa?
+      placeholder: Liste os criterios de conclusao.
+    validations:
+      required: true

@@ -1,0 +1,44 @@
+name: Feature
+description: Proposta de nova funcionalidade
+title: "feat: "
+labels:
+  - feature
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto
+      description: Qual problema ou oportunidade motivou esta funcionalidade?
+      placeholder: Descreva o contexto de negocio e o problema atual.
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Objetivo
+      description: O que deve mudar quando esta feature estiver pronta?
+      placeholder: Descreva o resultado esperado.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Escopo inicial
+      description: Qual e o recorte minimo para entregar valor?
+      placeholder: Liste os comportamentos que entram nesta primeira entrega.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Criterios de aceite
+      description: Como saberemos que esta issue esta pronta?
+      placeholder: Liste criterios objetivos.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Observacoes
+      description: Dependencias, riscos ou referencias adicionais.
+      placeholder: Informacoes complementares.

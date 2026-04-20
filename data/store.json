@@ -1,0 +1,65 @@
+{
+  "profiles": [
+    {
+      "id": "profile-primary",
+      "name": "PUZZLE PIECE CONSULTORIA EMPRESARIAL",
+      "email": "",
+      "businessName": "Puzzle Piece",
+      "taxId": "53.743.482/0001-36",
+      "address": "Rua David Campista, 1150, 83045060, São José dos Pinhais, PR - Brasil",
+      "paymentDetails": ""
+    },
+    {
+      "id": "profile-partner",
+      "name": "Pessoa 2",
+      "email": "",
+      "businessName": "",
+      "taxId": "",
+      "address": "",
+      "paymentDetails": ""
+    }
+  ],
+  "clients": [
+    {
+      "id": "e0a0c33c-373f-4551-8615-6979c94b7387",
+      "name": "Globalfy",
+      "company": "Globalfy Business Services LLC",
+      "email": "",
+      "country": "United States",
+      "currency": "USD",
+      "address": "7345 West Sand Lake Road Ste 210, Doctor Phillips, Orlando, FL 32819, Estados Unidos",
+      "taxId": "",
+      "createdAt": "2026-04-19T22:00:41.564Z",
+      "updatedAt": "2026-04-19T22:30:32.087Z"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "9dcb7dd1-ba60-4208-a89b-5d960109d362",
+      "number": "P1-0001",
+      "ownerId": "profile-primary",
+      "clientId": "e0a0c33c-373f-4551-8615-6979c94b7387",
+      "title": "Professional services",
+      "issueDate": "2026-03-06",
+      "dueDate": "2026-03-06",
+      "currency": "USD",
+      "status": "paid",
+      "notes": "",
+      "paymentDetails": "",
+      "reference": "March 2026",
+      "items": [
+        {
+          "id": "7d6257a5-f627-41cc-a6ca-67f0268b2d33",
+          "description": "Professional services as Revenue and Growth Manager provided in March 2026.",
+          "quantity": 1,
+          "unitPrice": 437.08,
+          "total": 437.08
+        }
+      ],
+      "subtotal": 437.08,
+      "total": 437.08,
+      "createdAt": "2026-04-19T22:40:24.616Z",
+      "updatedAt": "2026-04-20T00:11:10.344Z"
+    }
+  ]
+}

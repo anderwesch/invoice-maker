@@ -237,6 +237,47 @@ export async function deleteInvoiceAction(formData: FormData) {
   redirect("/");
 }
 
+export async function duplicateInvoiceAction(formData: FormData) {
+  const invoiceId = asString(formData.get("invoiceId"));
+
+  if (!invoiceId) {
+    return;
+  }
+
+  const store = await readStore();
+  const currentInvoice = store.invoices.find((invoice) => invoice.id === invoiceId);
+
+  if (!currentInvoice) {
+    return;
+  }
+
+  const now = new Date().toISOString();
+  const newInvoiceId = crypto.randomUUID();
+  const duplicatedItems = currentInvoice.items.map((item) => ({
+    ...item,
+    id: crypto.randomUUID(),
+  }));
+  const total = duplicatedItems.reduce((sum, item) => sum + item.total, 0);
+
+  await saveInvoice({
+    ...currentInvoice,
+    id: newInvoiceId,
+    number: nextInvoiceNumber(store.invoices, currentInvoice.ownerId),
+    status: "draft",
+    items: duplicatedItems,
+    subtotal: total,
+    total,
+    createdAt: now,
+    updatedAt: now,
+  });
+
+  revalidatePath("/");
+  revalidatePath("/clients");
+  revalidatePath("/invoices/new");
+  revalidatePath(`/invoices/${invoiceId}`);
+  redirect(`/invoices/${newInvoiceId}/edit`);
+}
+
 export async function updateInvoiceStatusAction(formData: FormData) {
   const invoiceId = asString(formData.get("invoiceId"));
   const status = asString(formData.get("status")) as InvoiceStatus;

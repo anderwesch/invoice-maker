@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { deleteInvoiceAction, updateInvoiceStatusAction } from "@/app/actions";
+import {
+  deleteInvoiceAction,
+  duplicateInvoiceAction,
+  updateInvoiceStatusAction,
+} from "@/app/actions";
 import { Shell } from "@/components/shell";
 import { StatusPill } from "@/components/status-pill";
 import { formatCurrency, formatDate } from "@/lib/format";
@@ -102,6 +106,13 @@ export default async function InvoiceDetailPage({
               >
                 Abrir versão de impressão
               </Link>
+              <button
+                type="submit"
+                formAction={duplicateInvoiceAction}
+                className="rounded-xl border border-[#2c1973]/15 bg-white/92 px-5 py-3 text-sm font-semibold text-[#2c1973] shadow-[0_8px_24px_rgba(44,25,115,0.08)] transition hover:-translate-y-0.5 hover:border-[#2c1973]/35 hover:bg-[#2c1973] hover:text-white"
+              >
+                Duplicar invoice
+              </button>
             </div>
           </form>
 
